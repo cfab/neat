@@ -40,10 +40,10 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Top Col 1", name: "top_col_1", widget: "markdown" }
-      - { label: "Top Col 2", name: "top_col_2", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Bottom Col 1", name: "bottom_col_1", widget: "markdown" }
-      - { label: "Bottom Col 2", name: "bottom_col_2", widget: "markdown" }
+      - { label: "Top Col 2", name: "top_col_2", widget: "markdown", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Bottom Col 1", name: "bottom_col_1", widget: "markdown", required: false }
+      - { label: "Bottom Col 2", name: "bottom_col_2", widget: "markdown", required: false }
   - label: "Settings"
     name: "settings"
     editor:
