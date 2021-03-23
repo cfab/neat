@@ -1,0 +1,17 @@
+---
+layout: default
+prism: false
+---
+
+<div class="container max-w-4xl px-6 mt-6">
+    <div class="pb-5 mb-5 border-b border-gray-100">
+        <h1 class="text-5xl font-bold">{{title}}</h1>
+        <p class="text-base font-medium leading-6 text-center text-gray-500">
+           {{top_col_1  | markdownify | safe}}
+        </p>
+
+    </div>
+    <article class="mx-auto my-4 prose lg:prose-xl">
+       {{top_col_2 | markdownify | safe}}</article>
+
+</div>

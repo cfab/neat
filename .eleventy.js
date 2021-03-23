@@ -22,9 +22,9 @@ module.exports = function (eleventyConfig) {
 
   // To Support .yaml Extension in _data
   // You may remove this if you can use JSON
-  eleventyConfig.addDataExtension("yaml", (contents) =>
-    yaml.safeLoad(contents)
-  );
+  // eleventyConfig.addDataExtension("yaml", (contents) =>
+  //   yaml.safeLoad(contents)
+  // );
 
   // Add Tailwind Output CSS as Watch Target
   eleventyConfig.addWatchTarget("./_tmp/static/css/style.css");
@@ -40,6 +40,14 @@ module.exports = function (eleventyConfig) {
 
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
+
+  const md = require('markdown-it')({
+    html: false,
+    breaks: true,
+    linkify: true
+});
+
+eleventyConfig.addNunjucksFilter("markdownify", markdownString => md.render(markdownString));
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
@@ -66,5 +74,7 @@ module.exports = function (eleventyConfig) {
       input: "src",
     },
     htmlTemplateEngine: "njk",
+    markdownTemplateEngine: 'njk',
+dataTemplateEngine: 'njk',
   };
 };

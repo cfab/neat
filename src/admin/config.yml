@@ -7,6 +7,10 @@ backend:
   # repo: surjithctly/neat-starter
 media_folder: "src/static/img"
 public_folder: "/static/img"
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 
 # Please run "npx netlify-cms-proxy-server" for local backend
 local_backend: true
@@ -34,6 +38,7 @@ collections:
   - label: "Pages"
     name: "pages"
     folder: "src/pages"
+    slug: "{{slug}}"
     create: true
     editor:
       preview: false
