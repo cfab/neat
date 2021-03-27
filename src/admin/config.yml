@@ -35,6 +35,7 @@ collections:
   - label: "Pages"
     name: "pages"
     folder: "src/pages"
+    format: "json"
     slug: "{{fields.slug}}"
     create: true
     editor:
